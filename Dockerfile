@@ -15,7 +15,7 @@ RUN mkdir -pv $HADOOP_DOWNLOAD_DIR \
     && tar -xvf /tmp/hadoop.tar.gz -C $HADOOP_DOWNLOAD_DIR --strip-components=1 \
     && mv -v $HADOOP_DOWNLOAD_DIR /opt \
     && rm -rfv /tmp/hadoop.tar.gz \
-    && rm -rfv $HADOOP_HOME/share/doc
+    && rm -rf $HADOOP_HOME/share/doc
 
 # comment out some really gross env variables
 # RUN sed -e '/^export HADOOP_DATANODE_OPTS/s/^/#/' -i $HADOOP_CONF_DIR/hadoop-env.sh
