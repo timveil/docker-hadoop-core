@@ -19,7 +19,6 @@ RUN mkdir -pv $HADOOP_DOWNLOAD_DIR \
     && rm -rfv $HADOOP_HOME/share/doc \
     && cp -v $HADOOP_CONF_DIR/mapred-site.xml.template $HADOOP_CONF_DIR/mapred-site.xml
 
-
 # comment out some really gross env variables
 # RUN sed -e '/^export HADOOP_DATANODE_OPTS/s/^/#/' -i $HADOOP_CONF_DIR/hadoop-env.sh
 # RUN sed -e '/^export HADOOP_NAMENODE_OPTS/s/^/#/' -i $HADOOP_CONF_DIR/hadoop-env.sh
