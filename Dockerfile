@@ -7,7 +7,7 @@ ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 ENV USER=root
 ENV PATH=$HADOOP_HOME/bin/:$PATH
 
-ARG HADOOP_VERSION=2.8.4
+ARG HADOOP_VERSION=3.1.1
 ARG HADOOP_DOWNLOAD_URL=https://www.apache.org/dyn/mirrors/mirrors.cgi?action=download&filename=hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 ARG HADOOP_DOWNLOAD_DIR=/tmp/hadoop
 
@@ -16,9 +16,7 @@ RUN mkdir -pv $HADOOP_DOWNLOAD_DIR \
     && tar -xvf /tmp/hadoop.tar.gz -C $HADOOP_DOWNLOAD_DIR --strip-components=1 \
     && mv -v $HADOOP_DOWNLOAD_DIR /opt \
     && rm -rfv /tmp/hadoop.tar.gz \
-    && rm -rfv $HADOOP_HOME/share/doc \
-    && cp -v $HADOOP_CONF_DIR/mapred-site.xml.template $HADOOP_CONF_DIR/mapred-site.xml
-
+    && rm -rfv $HADOOP_HOME/share/doc
 
 # comment out some really gross env variables
 # RUN sed -e '/^export HADOOP_DATANODE_OPTS/s/^/#/' -i $HADOOP_CONF_DIR/hadoop-env.sh
