@@ -7,7 +7,7 @@ ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 ENV PATH=$HADOOP_HOME/bin/:$PATH
 
 ARG HADOOP_VERSION=3.1.1
-ARG HADOOP_DOWNLOAD_URL=https://www.apache.org/dyn/mirrors/mirrors.cgi?action=download&filename=hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
+ARG HADOOP_DOWNLOAD_URL=https://archive.apache.org/dist/hadoop/common/current/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 ARG HADOOP_DOWNLOAD_DIR=/tmp/hadoop
 
 RUN mkdir -pv $HADOOP_DOWNLOAD_DIR \
