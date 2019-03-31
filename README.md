@@ -1,7 +1,18 @@
-# docker-hadoop-core
+# Docker Hadoop - Core (3.1.x)
 
-FSNameSystem uses commons.logging and is therefore not picked up
+`Dockerfile` responsible for extending `docker-hadoop-base` and installing and configuring core Hadoop components.  This image is extended by a number of other projects.
 
+## Building the Image
+```bash
 docker build --no-cache -t timveil/docker-hadoop-core:3.1.x .
+```
 
-test
+## Publishing the Image
+```bash
+docker push timveil/docker-hadoop-core:3.1.x
+```
+
+## Running the Image
+```bash
+docker run -it timveil/docker-hadoop-core:3.1.x
+```
